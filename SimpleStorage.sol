@@ -9,6 +9,7 @@ contract SimpleStorage {
     bytes32 favoriteBytes = "cat";
     string favoriteNumberInText = "Five";
     uint256 favoriteNumber2; // This is auto 0
+    mapping(string => uint256) public nameToFavoriteNumber;
  
     struct People {
         uint256 favoriteNumber;
@@ -26,8 +27,12 @@ contract SimpleStorage {
         return favoriteNumber;
     }
 
+    // calldata, memory, storage
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         people.push(People(_favoriteNumber, _name));
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
+
+    
 }
 // SC Address: 0xd9145CCE52D386f254917e481eB44e9943F39138
