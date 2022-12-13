@@ -8,13 +8,26 @@ contract SimpleStorage {
     address myAddress = 0x1066618d0973e44EfD2Fe5114fD18b64c6420AbB;
     bytes32 favoriteBytes = "cat";
     string favoriteNumberInText = "Five";
-    uint256 public favoriteNumber2; // This is auto 0
+    uint256 favoriteNumber2; // This is auto 0
+ 
+    struct People {
+        uint256 favoriteNumber;
+        string name;
+    }
+    
+    //uint256 [] public favoriteNumbersList;
+    People [] public people;
+
     function  Store(uint256 _favoriteNumber) public {
         favoriteNumber2 = _favoriteNumber;
     }
     //view, pure
     function retrieve() public view returns(uint256){
         return favoriteNumber;
+    }
+
+    function addPerson(string memory _name, uint256 _favoriteNumber) public {
+        people.push(People(_favoriteNumber, _name));
     }
 }
 // SC Address: 0xd9145CCE52D386f254917e481eB44e9943F39138
