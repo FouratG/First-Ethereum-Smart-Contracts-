@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.8; // This is a comment
 
+// EVM, Ethereum Virtual Machine
+// Avalanche, Fantom, Polygon<
+
 contract SimpleStorage {
     bool hasFavoriteNumber = false;
     uint256 favoriteNumber = 5;
